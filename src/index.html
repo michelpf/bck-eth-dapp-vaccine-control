@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Vaccine Chain</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container" style="width: 650px;">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-center">Vaccine Registration</h1>
+          <br/>
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Vaccine Card</h3>
+              </div>
+              <div class="alert alert-success fade out" id="alertPerson">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Success!</strong> Person added or changed succesfully
+              </div>
+              <p id="accountAddress" class="text-center"></p>
+              <div class="panel-body">
+                  <p id="accountAddress" class="text-center"></p>
+                  <form onSubmit="App.addPerson()">
+                      <div class="form-group">
+                        <label for="firstNameInput">First name</label>
+                        <input type="text" class="form-control" id="firstNameInput" placeholder="Enter your first name">
+                      </div>
+                      <div class="form-group">
+                          <label for="lastNameInput">Last name</label>
+                          <input type="text" class="form-control" id="lastNameInput" placeholder="Enter your last name">
+                      </div>
+                      <button type="submit" class="btn btn-primary">Create or change person identification</button>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newVaccine">Add a vaccine</button> 
+                    </form>
+              </div>
+              
+              <div class="list-group">
+                  <ul class="list-group">
+                      <li class="list-group-item list-group-item-warning" id="listMeasles">
+                        <h4 class="list-group-item-heading">Measles</h4>
+                        <span class="label label-warning" id="spanMeasles">MISSING RECORD</span>
+                        <br/>
+                        <br/>
+                        <p id="loteMeasles"></p>
+                        <p id="doseMeasles"></p>
+                        <h5 id="placeMeasles"></h4>
+                      </li>
+                      <li class="list-group-item list-group-item-warning" id="listFlu">
+                          <h4 class="list-group-item-heading">Flu</h4>
+                          <span class="label label-warning" id="spanFlu">MISSING RECORD</span>
+                          <br/>
+                          <br/>
+                          <p id="loteFlu"></p>
+                          <p id="doseFlu"></p>
+                          <h5 id="placeFlu"></h4>
+                        </li>
+                        <li class="list-group-item list-group-item-warning" id="listTetanus">
+                            <h4 class="list-group-item-heading">Tetanus</h4>
+                            <span class="label label-warning" id="spanTetanus">MISSING RECORD</span>
+                            <br/>
+                            <br/>
+                            <p id="loteTetanus"></p>
+                            <p id="doseTetanus"></p>
+                            <h5 id="placeTetanus"></h4>
+                          </li>
+                    </ul>
+                  
+                </div>
+            </div>
+            <div id="newVaccine" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+              
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">New Vaccine</h4>
+                    </div>
+                    <div class="alert alert-success fade out" id="alertVaccine">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Success!</strong> Vaccine added succesfully
+                    </div>
+                    <div class="modal-body">
+                        <p id="accountAddress" class="text-center"></p>
+                        <div class="panel-body">
+                            <form onSubmit="App.addVaccine(); return false;">
+                                <div class="form-group">
+                                      <label class="mr-sm-2" for="VaccineSelect">Vaccine</label>
+                                      <select class="form-control" id="VaccineSelect">
+                                          <option selected>Choose the vaccine</option>
+                                          <option value="1">Measles</option>
+                                          <option value="2">Flu</option>
+                                          <option value="3">Tetanus</option>
+                                        </select>
+                                  </div>
+                                <div class="form-group">
+                                    <label for="BatchInput">Dose</label>
+                                    <select class="form-control" id="DoseSelect"> 
+                                      <option>1</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                  </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="BatchInput">Batch</label>
+                                    <input type="text" class="form-control" id="BatchInput" placeholder="Enter the batch of the vaccine">
+                                </div>
+                                <div class="form-group">
+                                    <label for="PlaceInput">Place</label>
+                                    <input type="text" class="form-control" id="PlaceInput" placeholder="Enter the place where the vaccine was taken">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Add new vaccine</button> 
+                              </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                      
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+              
+                </div>
+              </div>
+            <br/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
