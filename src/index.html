@@ -31,10 +31,10 @@
                   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                   <strong>Success!</strong> Person added or changed succesfully
               </div>
+              <br/>
               <p id="accountAddress" class="text-center"></p>
               <div class="panel-body">
-                  <p id="accountAddress" class="text-center"></p>
-                  <form onSubmit="App.addPerson()">
+                  <form onSubmit="App.addPerson(); return false;">
                       <div class="form-group">
                         <label for="firstNameInput">First name</label>
                         <input type="text" class="form-control" id="firstNameInput" placeholder="Enter your first name">

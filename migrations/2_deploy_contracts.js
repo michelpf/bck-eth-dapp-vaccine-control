@@ -1,5 +1,5 @@
-var VaccinePerson = artifacts.require("./VaccinePerson.sol");
+var VaccineControl = artifacts.require("./VaccineControl.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(VaccinePerson);
+  deployer.deploy(VaccineControl);
 };
