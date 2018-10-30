@@ -1,6 +1,8 @@
 # DApp Vaccine Control
 Vaccine Control DApp based on Ethereum Blockchain
 
+_This application was used in [IMasters Webminar](https://www.eventials.com/imasters/blockchain-dapps-construindo-uma-aplicacao-descentralizada-com-ethereum), the presentation PDF is [here](https://github.com/michelpf/bck-eth-dapp-vaccine-control/blob/master/docs/20181010%20Blockchain%20Dapps.pdf), in portuguese (pt-br)_ 😛
+
 ## Introduction
 
 This is a proof-of-concept project to explain how Smart Contracts works on Ethereum blockchain platform.
